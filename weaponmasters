@@ -1,0 +1,173 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextButton = Instance.new("TextButton")
+local TextButton_2 = Instance.new("TextButton")
+local TextButton_3 = Instance.new("TextButton")
+local TextButton_4 = Instance.new("TextButton")
+local TextLabel = Instance.new("TextLabel")
+local TextButton_5 = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+Frame.Position = UDim2.new(0.227741331, 0, 0.0872865245, 0)
+Frame.Size = UDim2.new(0, 160, 0, 406)
+
+TextButton.Parent = Frame
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.Position = UDim2.new(0.100000001, 0, 0.031959299, 0)
+TextButton.Size = UDim2.new(0, 128, 0, 50)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = "Auto Swing"
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextScaled = true
+TextButton.TextSize = 14.000
+TextButton.TextWrapped = true
+
+TextButton_2.Parent = Frame
+TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_2.Position = UDim2.new(0.09375, 0, 0.178883463, 0)
+TextButton_2.Size = UDim2.new(0, 128, 0, 50)
+TextButton_2.Font = Enum.Font.SourceSans
+TextButton_2.Text = "Auto Rebirth"
+TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_2.TextScaled = true
+TextButton_2.TextSize = 14.000
+TextButton_2.TextWrapped = true
+
+TextButton_3.Parent = Frame
+TextButton_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_3.Position = UDim2.new(0.106250003, 0, 0.591280699, 0)
+TextButton_3.Size = UDim2.new(0, 126, 0, 50)
+TextButton_3.Font = Enum.Font.SourceSans
+TextButton_3.Text = "Teleport King Of The Hill"
+TextButton_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_3.TextScaled = true
+TextButton_3.TextSize = 14.000
+TextButton_3.TextWrapped = true
+
+TextButton_4.Parent = Frame
+TextButton_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_4.Position = UDim2.new(0.100000001, 0, 0.750781894, 0)
+TextButton_4.Size = UDim2.new(0, 126, 0, 50)
+TextButton_4.Font = Enum.Font.SourceSans
+TextButton_4.Text = "Daily Chest"
+TextButton_4.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_4.TextScaled = true
+TextButton_4.TextSize = 14.000
+TextButton_4.TextWrapped = true
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+TextLabel.Position = UDim2.new(-0.00975867175, 0, 0.437203676, 0)
+TextLabel.Size = UDim2.new(0, 160, 0, 50)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Teleports"
+TextLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+TextButton_5.Parent = Frame
+TextButton_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_5.Position = UDim2.new(0.09375, 0, 0.329129755, 0)
+TextButton_5.Size = UDim2.new(0, 128, 0, 50)
+TextButton_5.Font = Enum.Font.SourceSans
+TextButton_5.Text = "Auto Prestige"
+TextButton_5.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_5.TextScaled = true
+TextButton_5.TextSize = 14.000
+TextButton_5.TextWrapped = true
+
+-- Scripts:
+
+local function PZPTG_fake_script() -- TextButton.LocalScript 
+	local script = Instance.new('LocalScript', TextButton)
+
+	TextButton.MouseButton1Down:Connect(function()
+		if b == false then
+			b = true
+			TextButton.Text = "Auto Swing[ON]"
+			while b do
+				wait()
+				game:GetService("ReplicatedStorage").Events["Tool Events"].Swing:FireServer()
+			end
+		else
+			b = false
+			TextButton.Text = "Auto Swing[OFF]"
+		end
+	end)
+end
+coroutine.wrap(PZPTG_fake_script)()
+local function MWOAX_fake_script() -- TextButton_2.LocalScript 
+	local script = Instance.new('LocalScript', TextButton_2)
+
+	TextButton_2.MouseButton1Down:Connect(function()
+		if a == false then
+			a = true
+			TextButton_2.Text = "Auto Rebirth[ON]"
+			while a do
+				wait()
+				game:GetService("ReplicatedStorage").Events["Rebirth Events"].Rebirth:InvokeServer()
+			end
+		else
+			a = false
+			TextButton_2.Text = "Auto Rebirth[OFF]"
+		end
+	end)
+end
+coroutine.wrap(MWOAX_fake_script)()
+local function AVTHPJ_fake_script() -- TextButton_3.LocalScript 
+	local script = Instance.new('LocalScript', TextButton_3)
+
+	TextButton_3.MouseButton1Down:Connect(function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1492.75208, 499.519287, -691.624084)
+	end)
+end
+coroutine.wrap(AVTHPJ_fake_script)()
+local function JKAYLTF_fake_script() -- TextButton_4.LocalScript 
+	local script = Instance.new('LocalScript', TextButton_4)
+
+	TextButton_4.MouseButton1Down:Connect(function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1582.53357, 442.63562, -507.911591)
+	end)
+	
+	
+end
+coroutine.wrap(JKAYLTF_fake_script)()
+local function RFRTG_fake_script() -- TextButton_5.LocalScript 
+	local script = Instance.new('LocalScript', TextButton_5)
+
+	TextButton_5.MouseButton1Down:Connect(function()
+		if a == false then
+			a = true
+			TextButton_5.Text = "Auto Prestige[ON]"
+			while a do
+				wait()
+				game:GetService("ReplicatedStorage").Events["Rebirth Events"].Prestige:InvokeServer()
+			end
+		else
+			a = false
+			TextButton_5.Text = "Auto Prestige[OFF]"
+		end
+	end)
+end
+coroutine.wrap(RFRTG_fake_script)()
+local function HUFPASP_fake_script() -- ScreenGui.Script 
+	local script = Instance.new('Script', ScreenGui)
+
+	frame = script.Parent.Frame
+	frame.Draggable = true
+	frame.Active = true
+	frame.Selectable = true
+end
+coroutine.wrap(HUFPASP_fake_script)()
